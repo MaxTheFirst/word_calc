@@ -1,11 +1,11 @@
-import re
+numbers = (1768, 8*10**6, 8*10**(-60), 10/3)
 
-text = "Hello, !"
-pattern = "world"
-match = re.search(pattern, text)
-if match:
-    start = match.start()
-    end = match.end()
-    print(f"Начало вхождения: {start}, конец вхождения: {end}")
-else:
-    print("Совпадения не найдены")
+
+def format_number(number):
+    if number > 10**5:
+        result = '{:.2}'
+    return '{:.0e}'.format(number)
+
+
+for n in numbers:
+    print(format_number(n))
