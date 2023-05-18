@@ -72,5 +72,5 @@ def get_calc(eq):
     if result > 10**5 or result < 10**(-5):
         result = '{:.2e}'.format(result)
     else:
-        result = str(result)
+        result = '{:4.3f}'.format(result)
     return result.replace('.', ',')
