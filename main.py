@@ -1,10 +1,12 @@
 import win32com.client as win32
 from calc import get_calc
 
+
 def get_selections():
     word = win32.gencache.EnsureDispatch('Word.Application')
-    doc = word.ActiveDocument
+    word.ActiveDocument
     return word.Selection
+
 
 def main():
     selection = get_selections()
@@ -14,6 +16,6 @@ def main():
     selection.InsertAfter('='+result)
     omaths.BuildUp()
 
+
 if __name__ == '__main__':
     main()
-
