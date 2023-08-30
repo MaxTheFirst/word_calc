@@ -69,8 +69,6 @@ def get_calc(eq):
     eq = replace_roots(eq)
     eq = replaces_re(eq)
     result = eval(eq)
-    if result > 10**5 or result < 10**(-5):
-        result = '{:.2e}'.format(result)
-    else:
-        result = '{:4.3f}'.format(result)
-    return result.replace('.', ',')
+    if int(result) == result:
+        return str(int(result))
+    return '{:4.3f}'.format(result).replace('.', ',')
